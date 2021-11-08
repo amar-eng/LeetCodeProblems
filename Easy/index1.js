@@ -5,7 +5,7 @@ const twoSum = (nums, target) => {
   if (nums.length < 2) {
     return false;
   }
-  const output = [];
+  const output = []; // O(1)
   for (let i = 0; i < nums.length; i++) {
     for (let j = i + 1; j < nums.length; j++) {
       if (nums[i] + nums[j] === target) {
@@ -21,13 +21,14 @@ const twoSumImproved = function (nums, target) {
   if (nums.length < 2) {
     return false;
   }
-  const hash = {};
+  const hash = {}; // O(n)
   for (let i = 0; i < nums.length; i++) {
-    const diff = target - nums[i];
+    const diff = target - nums[i]; // O(1)
     if (hash[diff] !== undefined) {
-      return [hash[diff], i];
+      // O(1)
+      return [hash[diff], i]; // O(1)
     }
-    hash[nums[i]] = i;
+    hash[nums[i]] = i; // O(1)
   }
 }; // Time Complexity: O(n) - linear time
 // Space Complexity: O(n) - hash table
